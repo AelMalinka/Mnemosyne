@@ -6,12 +6,16 @@
 
 using namespace Entropy;
 
-Mnemosyne::Application::Application()
-	: Aoede::Application(), Theia::Application()
+Mnemosyne::Application::Application() :
+	Tethys::Application(),
+	Aoede::Application(),
+	Theia::Application()
 {}
 
-Mnemosyne::Application::Application(const int argc, char *argv[])
-	: Aoede::Application(argc, argv), Theia::Application(argc, argv)
+Mnemosyne::Application::Application(const int argc, char *argv[]) :
+	Tethys::Application(argc, argv),
+	Aoede::Application(argc, argv),
+	Theia::Application(argc, argv)
 {}
 
 Mnemosyne::Application::~Application() = default;
