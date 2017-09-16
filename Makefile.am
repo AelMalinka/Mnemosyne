@@ -18,14 +18,19 @@ libmnemosyne_la_LDFLAGS = -version-info 0
 check_PROGRAMS =
 
 if GTEST
-check_PROGRAMS +=
+check_PROGRAMS += \
+	application-basic
 
-gtestLDADD = $(GTEST_LIBS) -lgtest_main libmnemosyne.la
+gtestLDADD = $(LIBS) $(GTEST_LIBS) -lgtest_main libmnemosyne.la
+
+application_basic_SOURCES = test/application/basic.cc
+application_basic_LDADD = $(gtestLDADD)
 endif
 
 TESTSUITE = $(srcdir)/test/testsuite
 
-TESTSUITE_FILES =
+TESTSUITE_FILES = \
+	test/application.at
 
 EXTRA_DIST = $(TESTSUITE_FILES) \
 	$(srcdir)/test/testsuite.at \
