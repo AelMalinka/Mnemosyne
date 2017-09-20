@@ -1,0 +1,9 @@
+# Copyright 2017 (c) Michael Thomas (malinka) <malinka@entropy-development.com>
+# Distributed under the terms of the GNU Affero General Public License v3
+
+AT_BANNER([Handle Tests])
+
+AT_SETUP([Handle Basic])
+AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([handle-basic], [], [ignore], [ignore])
+AT_CLEANUP

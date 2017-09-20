@@ -7,7 +7,9 @@ AM_CPPFLAGS = -I$(srcdir)/src
 mainheadersdir = $(includedir)/Entropy/Mnemosyne
 mainheaders_HEADERS = \
 	src/Application.hh \
-	src/Exception.hh
+	src/Exception.hh \
+	src/Handle.hh \
+	src/Handle.impl.hh
 
 lib_LTLIBRARIES = libmnemosyne.la
 
@@ -19,18 +21,23 @@ check_PROGRAMS =
 
 if GTEST
 check_PROGRAMS += \
-	application-basic
+	application-basic \
+	handle-basic
 
 gtestLDADD = $(LIBS) $(GTEST_LIBS) -lgtest_main libmnemosyne.la
 
 application_basic_SOURCES = test/application/basic.cc
 application_basic_LDADD = $(gtestLDADD)
+
+handle_basic_SOURCES = test/handle/basic.cc
+handle_basic_LDADD = $(gtestLDADD)
 endif
 
 TESTSUITE = $(srcdir)/test/testsuite
 
 TESTSUITE_FILES = \
-	test/application.at
+	test/application.at \
+	test/handle.at
 
 EXTRA_DIST = $(TESTSUITE_FILES) \
 	$(srcdir)/test/testsuite.at \
