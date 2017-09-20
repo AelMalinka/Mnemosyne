@@ -11,18 +11,28 @@ mainheaders_HEADERS = \
 	src/Handle.hh \
 	src/Handle.impl.hh
 
+resourceheadersdir = $(mainheadersdir)/Resources
+resourceheaders_HEADERS = \
+	src/Resources/Exception.hh \
+	src/Resources/Png.hh
+
 lib_LTLIBRARIES = libmnemosyne.la
 
 libmnemosyne_la_SOURCES = \
-	src/Application.cc
+	src/Application.cc \
+	src/Resources/Png.cc
 libmnemosyne_la_LDFLAGS = -version-info 0
 
 check_PROGRAMS =
 
+all-local:
+	test -d data || $(LN_S) $(top_srcdir)/data $(builddir)/data
+
 if GTEST
 check_PROGRAMS += \
 	application-basic \
-	handle-basic
+	handle-basic \
+	resource-png
 
 gtestLDADD = $(LIBS) $(GTEST_LIBS) -lgtest_main libmnemosyne.la
 
@@ -31,13 +41,17 @@ application_basic_LDADD = $(gtestLDADD)
 
 handle_basic_SOURCES = test/handle/basic.cc
 handle_basic_LDADD = $(gtestLDADD)
+
+resource_png_SOURCES = test/resources/png.cc
+resource_png_LDADD = $(gtestLDADD)
 endif
 
 TESTSUITE = $(srcdir)/test/testsuite
 
 TESTSUITE_FILES = \
 	test/application.at \
-	test/handle.at
+	test/handle.at \
+	test/resources.at
 
 EXTRA_DIST = $(TESTSUITE_FILES) \
 	$(srcdir)/test/testsuite.at \

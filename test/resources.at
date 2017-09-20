@@ -1,0 +1,10 @@
+# Copyright 2017 (c) Michael Thomas (malinka) <malinka@entropy-development.com>
+# Distributed under the terms of the GNU Affero General Public License v3
+
+AT_BANNER([Resource Tests])
+
+AT_SETUP([Png Resource])
+AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([ln -s "${BUILD}/data" data], [])
+AT_CHECK([resource-png], [], [ignore], [ignore])
+AT_CLEANUP
