@@ -126,10 +126,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Application.cc" />
+    <ClCompile Include="..\..\src\Resources\Png.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Application.hh" />
     <ClInclude Include="..\..\src\Exception.hh" />
+    <ClInclude Include="..\..\src\Handle.hh" />
+    <ClInclude Include="..\..\src\Handle.impl.hh" />
+    <ClInclude Include="..\..\src\Resources\Exception.hh" />
+    <ClInclude Include="..\..\src\Resources\Png.hh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -9,10 +9,22 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
+    <Filter Include="Implementation Files">
+      <UniqueIdentifier>{a3181942-e1ce-4354-ab00-c4d8a1ed5ac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Resources">
+      <UniqueIdentifier>{b8eb2541-365c-42c4-96b4-c019f322f99a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resources">
+      <UniqueIdentifier>{2f11f686-d35e-4b6a-8e6c-6e89b1652e04}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Application.cc">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Resources\Png.cc">
+      <Filter>Source Files\Resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -21,6 +33,18 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Exception.hh">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Handle.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Handle.impl.hh">
+      <Filter>Implementation Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Resources\Exception.hh">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Resources\Png.hh">
+      <Filter>Header Files\Resources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
