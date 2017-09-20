@@ -28,3 +28,5 @@ win/.vs
 win/*.VC.db
 win/*.VC.opendb
 win/*/*.user
+
+win/*/*.log
