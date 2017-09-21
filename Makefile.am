@@ -15,14 +15,16 @@ resourceheadersdir = $(mainheadersdir)/Resources
 resourceheaders_HEADERS = \
 	src/Resources/Exception.hh \
 	src/Resources/File.hh \
-	src/Resources/Png.hh
+	src/Resources/Png.hh \
+	src/Resources/Sound.hh
 
 lib_LTLIBRARIES = libmnemosyne.la
 
 libmnemosyne_la_SOURCES = \
 	src/Application.cc \
 	src/Resources/File.cc \
-	src/Resources/Png.cc
+	src/Resources/Png.cc \
+	src/Resources/Sound.cc
 libmnemosyne_la_LDFLAGS = -version-info 0
 
 check_PROGRAMS =
@@ -35,7 +37,8 @@ check_PROGRAMS += \
 	application-basic \
 	handle-basic \
 	resource-file \
-	resource-png
+	resource-png \
+	resource-sound
 
 gtestLDADD = $(LIBS) $(GTEST_LIBS) -lgtest_main libmnemosyne.la
 
@@ -50,6 +53,9 @@ resource_file_LDADD = $(gtestLDADD)
 
 resource_png_SOURCES = test/resources/png.cc
 resource_png_LDADD = $(gtestLDADD)
+
+resource_sound_SOURCES = test/resources/sound.cc
+resource_sound_LDADD = $(gtestLDADD)
 endif
 
 TESTSUITE = $(srcdir)/test/testsuite

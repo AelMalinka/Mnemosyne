@@ -18,3 +18,9 @@ AT_SKIP_IF([test -z $GTEST])
 AT_CHECK([ln -s "${BUILD}/data" data], [])
 AT_CHECK([resource-png], [], [ignore], [ignore])
 AT_CLEANUP
+
+AT_SETUP([Sound Resource])
+AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([ln -s "${BUILD}/data" data], [])
+AT_CHECK([resource-sound], [], [ignore], [ignore])
+AT_CLEANUP
