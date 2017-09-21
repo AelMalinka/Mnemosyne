@@ -30,10 +30,19 @@ libmnemosyne_la_LDFLAGS = -version-info 0
 check_PROGRAMS =
 noinst_DATA = \
 	data/pnglogo.png \
-	data/sound.oga
+	data/sound.oga \
+	data/basic.json
 
 all-local:
 	test -d data || $(LN_S) $(top_srcdir)/data $(builddir)/data
+
+if JSON
+resourceheaders_HEADERS += \
+	src/Resources/Json.hh
+
+libmnemosyne_la_SOURCES += \
+	src/Resources/Json.cc
+endif
 
 if GTEST
 check_PROGRAMS += \
@@ -59,6 +68,14 @@ resource_png_LDADD = $(gtestLDADD)
 
 resource_sound_SOURCES = test/resources/sound.cc
 resource_sound_LDADD = $(gtestLDADD)
+
+if JSON
+check_PROGRAMS += \
+	resource-json
+
+resource_json_SOURCES = test/resources/json.cc
+resource_json_LDADD = $(gtestLDADD)
+endif
 endif
 
 TESTSUITE = $(srcdir)/test/testsuite
