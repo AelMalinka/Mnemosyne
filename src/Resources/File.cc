@@ -10,5 +10,5 @@ using namespace std;
 
 Handle<fstream> File::operator () (const string &path)
 {
-	return Handle<fstream>(make_shared<fstream>(path, ios_base::in));
+	return Handle<fstream>(make_shared<fstream>(path));
 }
