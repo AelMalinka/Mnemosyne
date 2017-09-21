@@ -13,6 +13,8 @@
 			template<typename T> Handle<T>::Handle(const Handle<T> &) = default;
 			template<typename T> Handle<T>::Handle(Handle<T> &&) = default;
 			template<typename T> Handle<T>::~Handle() = default;
+			template<typename T> Handle<T> &Handle<T>::operator = (const Handle<T> &) = default;
+			template<typename T> Handle<T> &Handle<T>::operator = (Handle<T> &&) = default;
 
 			template<typename T>
 			Handle<T>::Handle(T *ptr)

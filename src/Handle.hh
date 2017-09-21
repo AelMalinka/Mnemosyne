@@ -22,6 +22,8 @@
 					Handle(const Handle<T> &);
 					Handle(Handle<T> &&);
 					virtual ~Handle();
+					Handle &operator = (const Handle<T> &);
+					Handle &operator = (Handle<T> &&);
 					T *get();
 					T &operator *();
 					T *operator -> ();
