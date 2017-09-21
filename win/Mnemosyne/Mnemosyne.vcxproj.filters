@@ -26,6 +26,15 @@
     <ClCompile Include="..\..\src\Resources\Png.cc">
       <Filter>Source Files\Resources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Resources\File.cc">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Resources\Json.cc">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Resources\Sound.cc">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Application.hh">
@@ -44,6 +53,15 @@
       <Filter>Header Files\Resources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Resources\Png.hh">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Resources\File.hh">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Resources\Json.hh">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Resources\Sound.hh">
       <Filter>Header Files\Resources</Filter>
     </ClInclude>
   </ItemGroup>

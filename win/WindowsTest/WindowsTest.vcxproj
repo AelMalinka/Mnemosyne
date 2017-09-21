@@ -82,8 +82,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\Repos\Mnemosyne\win\include;F:\Source\External\libepoxy\build\include</AdditionalIncludeDirectories>
-      <DisableSpecificWarnings>4250</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\External\jsoncpp\include;F:\Source\Repos\Mnemosyne\win\include;F:\Source\External\libepoxy\build\include</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4250;4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(OutDir);F:\Source\External\boost\stage\lib;F:\Source\External\libpng\projects\vstudio\Release Library;F:\Source\External\libuv\Release\lib;F:\Source\External\glfw\build\src\RelWithDebInfo;F:\Source\External\libepoxy\build\src;F:\Source\External\flac\objs\release\lib;F:\Source\External\OpenAL\libs\Win32</AdditionalLibraryDirectories>
@@ -97,8 +97,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\Repos\Mnemosyne\win\include</AdditionalIncludeDirectories>
-      <DisableSpecificWarnings>4250</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\External\jsoncpp\include;F:\Source\Repos\Mnemosyne\win\include;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4250;4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
@@ -111,8 +111,8 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\Repos\Mnemosyne\win\include;F:\Source\External\libepoxy\build\include</AdditionalIncludeDirectories>
-      <DisableSpecificWarnings>4250</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\External\jsoncpp\include;F:\Source\Repos\Mnemosyne\win\include;F:\Source\External\libepoxy\build\include</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4250;4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -129,8 +129,8 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\Repos\Mnemosyne\win\include</AdditionalIncludeDirectories>
-      <DisableSpecificWarnings>4250</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\External\jsoncpp\include;F:\Source\Repos\Mnemosyne\win\include;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4250;4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
