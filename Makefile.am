@@ -28,6 +28,9 @@ libmnemosyne_la_SOURCES = \
 libmnemosyne_la_LDFLAGS = -version-info 0
 
 check_PROGRAMS =
+noinst_DATA = \
+	data/pnglogo.png \
+	data/sound.oga
 
 all-local:
 	test -d data || $(LN_S) $(top_srcdir)/data $(builddir)/data
