@@ -14,12 +14,14 @@ mainheaders_HEADERS = \
 resourceheadersdir = $(mainheadersdir)/Resources
 resourceheaders_HEADERS = \
 	src/Resources/Exception.hh \
+	src/Resources/File.hh \
 	src/Resources/Png.hh
 
 lib_LTLIBRARIES = libmnemosyne.la
 
 libmnemosyne_la_SOURCES = \
 	src/Application.cc \
+	src/Resources/File.cc \
 	src/Resources/Png.cc
 libmnemosyne_la_LDFLAGS = -version-info 0
 
@@ -32,6 +34,7 @@ if GTEST
 check_PROGRAMS += \
 	application-basic \
 	handle-basic \
+	resource-file \
 	resource-png
 
 gtestLDADD = $(LIBS) $(GTEST_LIBS) -lgtest_main libmnemosyne.la
@@ -41,6 +44,9 @@ application_basic_LDADD = $(gtestLDADD)
 
 handle_basic_SOURCES = test/handle/basic.cc
 handle_basic_LDADD = $(gtestLDADD)
+
+resource_file_SOURCES = test/resources/file.cc
+resource_file_LDADD = $(gtestLDADD)
 
 resource_png_SOURCES = test/resources/png.cc
 resource_png_LDADD = $(gtestLDADD)

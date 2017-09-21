@@ -3,6 +3,16 @@
 
 AT_BANNER([Resource Tests])
 
+AT_SETUP([File Resource])
+AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([mkdir data])
+AT_DATA([data/text], [[This is a test file
+With multiple lines
+and some #$%^#$&#*!#@$%& garbage
+]])
+AT_CHECK([resource-file], [], [ignore], [ignore])
+AT_CLEANUP
+
 AT_SETUP([Png Resource])
 AT_SKIP_IF([test -z $GTEST])
 AT_CHECK([ln -s "${BUILD}/data" data], [])
