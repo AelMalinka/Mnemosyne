@@ -8,6 +8,7 @@
 #	include "Exception.hh"
 #	include <Entropy/Aoede/Application.hh>
 #	include <Entropy/Theia/Application.hh>
+#	include <list>
 
 	namespace Entropy
 	{
@@ -21,8 +22,17 @@
 					Application();
 					Application(const int, char *[]);
 					virtual ~Application();
+					template<typename F>
+					auto get(const std::string &, F) const;
+					virtual void addSearchPath(const std::string &);
+				protected:
+					virtual std::string findFullPath(const std::string &) const;
+				private:
+					std::list<std::string> _paths;
 			};
 		}
 	}
+
+#	include "Application.impl.hh"
 
 #endif

@@ -5,5 +5,6 @@ AT_BANNER([Application Tests])
 
 AT_SETUP([Application Basic])
 AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([ln -s "${BUILD}/data" data], [])
 AT_CHECK([application-basic], [], [ignore], [ignore])
 AT_CLEANUP
