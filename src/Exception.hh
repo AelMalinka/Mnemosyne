@@ -17,6 +17,8 @@
 		namespace Mnemosyne
 		{
 			ENTROPY_EXCEPTION_BASE(Exception, "Mnemosyne Exception");
+
+			extern Log::Logger Log;
 		}
 	}
 

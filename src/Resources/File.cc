@@ -6,9 +6,11 @@
 
 using namespace Entropy::Mnemosyne::Resources;
 using namespace Entropy::Mnemosyne;
+using namespace Entropy;
 using namespace std;
 
 Handle<fstream> File::operator () (const string &path)
 {
+	ENTROPY_LOG(Log, Severity::Info) << "Loading File: " << path;
 	return Handle<fstream>(make_shared<fstream>(path));
 }

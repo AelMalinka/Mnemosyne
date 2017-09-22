@@ -12,6 +12,8 @@ using namespace std;
 
 Handle<Value> Resources::Json::operator () (const string &path)
 {
+	ENTROPY_LOG(Log, Severity::Info) << "Loading Json: " << path;
+
 	Handle<Value> ret = Handle<Value>(make_shared<Value>());
 	fstream file(path, ios_base::in);
 	string errors;

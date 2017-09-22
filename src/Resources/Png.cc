@@ -11,5 +11,7 @@ using namespace std;
 
 Handle<PNG> Png::operator () (const string &path)
 {
+	ENTROPY_LOG(Log, Severity::Info) << "Loading Png: " << path;
+
 	return Handle<PNG>(make_shared<PNG>(path));
 }

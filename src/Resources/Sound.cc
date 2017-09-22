@@ -15,5 +15,6 @@ Sound::Sound(const bool Repeat)
 
 Handle<Aoede::Sound> Sound::operator () (const string &path)
 {
+	ENTROPY_LOG(Log, Severity::Info) << "Loading Sound: " << path;
 	return Handle<Aoede::Sound>(make_shared<Aoede::Sound>(path, _repeat));
 }
