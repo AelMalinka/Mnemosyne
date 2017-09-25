@@ -21,8 +21,8 @@ namespace {
 
 	TEST(Application, Get) {
 		Application app;
-
 		Handle<Json::Value> basic;
+
 #		ifndef HAVE_CXX_FS
 			EXPECT_THROW(app.addSearchPath("data"), Exception);
 
