@@ -126,6 +126,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Application.cc" />
+    <ClCompile Include="..\..\src\Logger.cc" />
     <ClCompile Include="..\..\src\Resources\File.cc" />
     <ClCompile Include="..\..\src\Resources\Json.cc" />
     <ClCompile Include="..\..\src\Resources\Png.cc" />

@@ -35,6 +35,9 @@
     <ClCompile Include="..\..\src\Resources\Sound.cc">
       <Filter>Source Files\Resources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Logger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Application.hh">
