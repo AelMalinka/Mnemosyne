@@ -17,6 +17,8 @@
 
 				ENTROPY_EXCEPTION(NoFile, "Resource Exception: File Not Found", ::Entropy::Mnemosyne::Resources::Exception);
 				ENTROPY_EXCEPTION(WrongType, "Resource Exception: Wrong File Type", ::Entropy::Mnemosyne::Resources::Exception);
+
+				ENTROPY_ERROR_INFO(ResourcePath, std::string);
 			}
 		}
 	}
