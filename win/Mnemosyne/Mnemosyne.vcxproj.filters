@@ -38,6 +38,12 @@
     <ClCompile Include="..\..\src\Logger.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Resources\Shader.cc">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Resources\Texture.cc">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Application.hh">
@@ -65,6 +71,12 @@
       <Filter>Header Files\Resources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Resources\Sound.hh">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Resources\Shader.hh">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Resources\Texture.hh">
       <Filter>Header Files\Resources</Filter>
     </ClInclude>
   </ItemGroup>

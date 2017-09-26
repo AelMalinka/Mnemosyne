@@ -130,7 +130,9 @@
     <ClCompile Include="..\..\src\Resources\File.cc" />
     <ClCompile Include="..\..\src\Resources\Json.cc" />
     <ClCompile Include="..\..\src\Resources\Png.cc" />
+    <ClCompile Include="..\..\src\Resources\Shader.cc" />
     <ClCompile Include="..\..\src\Resources\Sound.cc" />
+    <ClCompile Include="..\..\src\Resources\Texture.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Application.hh" />
@@ -141,7 +143,9 @@
     <ClInclude Include="..\..\src\Resources\File.hh" />
     <ClInclude Include="..\..\src\Resources\Json.hh" />
     <ClInclude Include="..\..\src\Resources\Png.hh" />
+    <ClInclude Include="..\..\src\Resources\Shader.hh" />
     <ClInclude Include="..\..\src\Resources\Sound.hh" />
+    <ClInclude Include="..\..\src\Resources\Texture.hh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
