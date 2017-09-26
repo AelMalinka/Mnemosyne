@@ -17,7 +17,8 @@ resourceheaders_HEADERS = \
 	src/Resources/Exception.hh \
 	src/Resources/File.hh \
 	src/Resources/Png.hh \
-	src/Resources/Sound.hh
+	src/Resources/Sound.hh \
+	src/Resources/Texture.hh
 
 lib_LTLIBRARIES = libmnemosyne.la
 
@@ -26,7 +27,8 @@ libmnemosyne_la_SOURCES = \
 	src/Logger.cc \
 	src/Resources/File.cc \
 	src/Resources/Png.cc \
-	src/Resources/Sound.cc
+	src/Resources/Sound.cc \
+	src/Resources/Texture.cc
 libmnemosyne_la_LDFLAGS = -version-info 0
 
 check_PROGRAMS =
@@ -52,7 +54,8 @@ check_PROGRAMS += \
 	handle-basic \
 	resource-file \
 	resource-png \
-	resource-sound
+	resource-sound \
+	resource-texture
 
 gtestLDADD = $(LIBS) $(GTEST_LIBS) -lgtest_main libmnemosyne.la
 
@@ -70,6 +73,9 @@ resource_png_LDADD = $(gtestLDADD)
 
 resource_sound_SOURCES = test/resources/sound.cc
 resource_sound_LDADD = $(gtestLDADD)
+
+resource_texture_SOURCES = test/resources/texture.cc
+resource_texture_LDADD = $(gtestLDADD)
 
 if JSON
 check_PROGRAMS += \
