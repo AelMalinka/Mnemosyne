@@ -23,7 +23,7 @@
 					Application(const int, char *[]);
 					virtual ~Application();
 					template<typename F>
-					auto get(const std::string &, F) const;
+					auto load(const std::string &, F) const;
 					virtual void addSearchPath(const std::string &);
 				protected:
 					virtual std::string findFullPath(const std::string &) const;

@@ -12,7 +12,7 @@
 		namespace Mnemosyne
 		{
 			template<typename F>
-			auto Application::get(const std::string &path, F f) const
+			auto Application::load(const std::string &path, F f) const
 			{
 				return f(findFullPath(path));
 			}
