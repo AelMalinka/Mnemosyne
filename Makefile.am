@@ -17,6 +17,7 @@ resourceheaders_HEADERS = \
 	src/Resources/Exception.hh \
 	src/Resources/File.hh \
 	src/Resources/Png.hh \
+	src/Resources/Shader.hh \
 	src/Resources/Sound.hh \
 	src/Resources/Texture.hh
 
@@ -27,15 +28,18 @@ libmnemosyne_la_SOURCES = \
 	src/Logger.cc \
 	src/Resources/File.cc \
 	src/Resources/Png.cc \
+	src/Resources/Shader.cc \
 	src/Resources/Sound.cc \
 	src/Resources/Texture.cc
 libmnemosyne_la_LDFLAGS = -version-info 0
 
 check_PROGRAMS =
 noinst_DATA = \
+	data/basic.json \
 	data/pnglogo.png \
-	data/sound.oga \
-	data/basic.json
+	data/shader.frag \
+	data/shader.vert \
+	data/sound.oga
 
 all-local:
 	test -d data || $(LN_S) $(top_srcdir)/data $(builddir)/data
@@ -54,6 +58,7 @@ check_PROGRAMS += \
 	handle-basic \
 	resource-file \
 	resource-png \
+	resource-shader \
 	resource-sound \
 	resource-texture
 
@@ -70,6 +75,9 @@ resource_file_LDADD = $(gtestLDADD)
 
 resource_png_SOURCES = test/resources/png.cc
 resource_png_LDADD = $(gtestLDADD)
+
+resource_shader_SOURCES = test/resources/shader.cc
+resource_shader_LDADD = $(gtestLDADD)
 
 resource_sound_SOURCES = test/resources/sound.cc
 resource_sound_LDADD = $(gtestLDADD)
