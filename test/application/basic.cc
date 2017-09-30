@@ -26,11 +26,11 @@ namespace {
 #		ifndef HAVE_CXX_FS
 			EXPECT_THROW(app.addSearchPath("data"), Exception);
 
-			basic = app.load("data/basic.json", Resources::Json());
+			basic = app.load("data/basic", Resources::Json());
 #		else
 			app.addSearchPath("data");
 
-			basic = app.load("basic.json", Resources::Json());
+			basic = app.load("basic", Resources::Json());
 #		endif
 
 		EXPECT_EQ((*basic)["thing"]["value"].asInt(), 10);

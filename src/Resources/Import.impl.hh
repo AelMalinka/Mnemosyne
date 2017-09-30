@@ -18,6 +18,16 @@
 				{
 					return Entropy::Import<Interface>(path);
 				}
+
+				template<typename Interface>
+				constexpr const char *Import<Interface>::Extension() const
+				{
+					#ifndef _WIN32
+						return ".so";
+					#else
+						return ".dll";
+					#endif
+				}
 			}
 		}
 	}

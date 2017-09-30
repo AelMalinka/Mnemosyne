@@ -21,6 +21,7 @@
 				{
 					public:
 						Entropy::Import<Interface> operator () (const std::string &);
+						constexpr const char *Extension() const;
 				};
 			}
 		}

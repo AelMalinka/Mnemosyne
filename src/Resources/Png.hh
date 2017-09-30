@@ -19,6 +19,7 @@
 				{
 					public:
 						virtual Handle<PNG> operator () (const std::string &);
+						constexpr const char *Extension() const { return ".png"; }
 				};
 			}
 		}

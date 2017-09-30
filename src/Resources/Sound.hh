@@ -20,6 +20,7 @@
 					public:
 						explicit Sound(const bool Repeat = false);
 						virtual Handle<Aoede::Sound> operator () (const std::string &);
+						constexpr const char *Extension() const { return ".oga"; }
 					private:
 						bool _repeat;
 				};

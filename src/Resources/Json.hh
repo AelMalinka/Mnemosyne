@@ -21,6 +21,7 @@
 				{
 					public:
 						virtual Handle<::Json::Value> operator () (const std::string &);
+						constexpr const char *Extension() const { return ".json"; }
 				};
 			}
 		}
