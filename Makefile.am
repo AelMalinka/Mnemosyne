@@ -52,11 +52,15 @@ libmnemosyne_la_SOURCES += \
 	src/Resources/Json.cc
 endif
 
+module.so: $(srcdir)/test/module/Module.cc $(srcdir)/test/module/Interface.hh $(srcdir)/src/Exception.hh
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(AM_CPPFLAGS) $(LDFLAGS) $(LIBS) -shared -fPIC -o $@ $(srcdir)/test/module/Module.cc
+
 if GTEST
 check_PROGRAMS += \
 	application-basic \
 	handle-basic \
 	resource-file \
+	resource-import \
 	resource-png \
 	resource-shader \
 	resource-sound \
@@ -72,6 +76,11 @@ handle_basic_LDADD = $(gtestLDADD)
 
 resource_file_SOURCES = test/resources/file.cc
 resource_file_LDADD = $(gtestLDADD)
+
+resource_import_SOURCES = test/resources/import.cc
+resource_import_CPPFLAGS = $(AM_CPPFLAGS) -I$(top_srcdir)/test/module
+resource_import_LDADD = $(gtestLDADD)
+resource_import_DEPENDENCIES = module.so
 
 resource_png_SOURCES = test/resources/png.cc
 resource_png_LDADD = $(gtestLDADD)
@@ -130,6 +139,7 @@ check-local: test/atconfig atlocal $(TESTSUITE) $(check_PROGRAMS)
 clean-local:
 	test ! -f '$(TESTSUITE)' || \
 		$(SHELL) '$(TESTSUITE)' --clean
+	$(RM) module.so
 
 AUTOM4TE = $(SHELL) $(srcdir)/build-aux/missing --run autom4te
 AUTOTEST = $(AUTOM4TE) --language=autotest
