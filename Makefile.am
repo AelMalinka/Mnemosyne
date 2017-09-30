@@ -9,6 +9,7 @@ mainheaders_HEADERS = \
 	src/Application.hh \
 	src/Application.impl.hh \
 	src/Event.hh \
+	src/Events.hh \
 	src/Exception.hh \
 	src/Handle.hh \
 	src/Handle.impl.hh
@@ -27,6 +28,7 @@ lib_LTLIBRARIES = libmnemosyne.la
 libmnemosyne_la_SOURCES = \
 	src/Application.cc \
 	src/Event.cc \
+	src/Events.cc \
 	src/Logger.cc \
 	src/Resources/File.cc \
 	src/Resources/Png.cc \
