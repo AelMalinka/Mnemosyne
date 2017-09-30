@@ -12,7 +12,8 @@ mainheaders_HEADERS = \
 	src/Events.hh \
 	src/Exception.hh \
 	src/Handle.hh \
-	src/Handle.impl.hh
+	src/Handle.impl.hh \
+	src/Mode.hh
 
 resourceheadersdir = $(mainheadersdir)/Resources
 resourceheaders_HEADERS = \
@@ -30,6 +31,7 @@ libmnemosyne_la_SOURCES = \
 	src/Event.cc \
 	src/Events.cc \
 	src/Logger.cc \
+	src/Mode.cc \
 	src/Resources/File.cc \
 	src/Resources/Png.cc \
 	src/Resources/Shader.cc \
