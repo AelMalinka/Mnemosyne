@@ -28,7 +28,7 @@
 					virtual ~Application();
 					virtual void operator () ();
 					virtual Mode &getMode();
-					virtual void setMode(const Theia::PolymorphicList<Mode>::iterator &);
+					virtual void setMode(const PolymorphicList<Mode>::iterator &);
 					virtual void addMode(const std::shared_ptr<Mode> &);
 					template<typename F>
 					auto load(const std::string &, F) const;
@@ -39,8 +39,8 @@
 					virtual std::string findFullPath(const std::string &) const;
 				private:
 					std::list<std::string> _paths;
-					Theia::PolymorphicList<Mode> _modes;
-					Theia::PolymorphicList<Mode>::iterator _current;
+					PolymorphicList<Mode> _modes;
+					PolymorphicList<Mode>::iterator _current;
 			};
 		}
 	}

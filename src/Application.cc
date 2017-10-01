@@ -26,7 +26,7 @@ namespace Aoede = Entropy::Aoede;
 namespace Theia = Entropy::Theia;
 
 using Entropy::Severity;
-using Entropy::Theia::PolymorphicList;
+using Entropy::PolymorphicList;
 
 #if defined(HAVE_CXX_FS) && !defined(HAVE_CXX_FS_EXPERIMENTAL)
 	using namespace std::filesystem;
@@ -73,6 +73,7 @@ Mode &Application::getMode()
 void Application::setMode(const PolymorphicList<Mode>::iterator &i)
 {
 	_current = i;
+	_current->makeCurrent();
 
 	Events::ModeChange ev(*this, getMode());
 	onEvent(ev);

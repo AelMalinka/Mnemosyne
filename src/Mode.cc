@@ -5,9 +5,31 @@
 #include "Mode.hh"
 
 using namespace Entropy::Mnemosyne;
-using namespace Entropy::Tethys;
-using namespace Entropy;
 using namespace std;
 
-Mode::Mode() = default;
+using Entropy::DefaultedList;
+using Entropy::Theia::Scene;
+
+Mode::Mode(Application &a)
+	: _app(a)
+{}
+
 Mode::~Mode() = default;
+
+void Mode::makeCurrent()
+{
+	_app.Windows()->Scenes().setDefault(_current);
+}
+
+DefaultedList<Scene>::iterator Mode::addScene()
+{
+	auto i = _app.Windows()->addScene();
+	_scenes.push_back(i);
+
+	return i;
+}
+
+void Mode::setScene(const DefaultedList<Scene>::iterator &i)
+{
+	_current = i;
+}
