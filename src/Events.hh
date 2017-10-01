@@ -18,7 +18,7 @@
 					public Event
 				{
 					public:
-						static constexpr std::size_t Id = Mnemosyne::Event::First;
+						static constexpr std::size_t Id = Event::First;
 						ModeChange(Application &, Mode &);
 						Application &getApplication() const;
 						Mode &getMode() const;
