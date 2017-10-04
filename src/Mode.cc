@@ -33,3 +33,23 @@ void Mode::setScene(const DefaultedList<Scene>::iterator &i)
 {
 	_current = i;
 }
+
+DefaultedList<Scene> &Mode::Scenes()
+{
+	return _app.Windows()->Scenes();
+}
+
+const DefaultedList<Scene> &Mode::Scenes() const
+{
+	return _app.Windows()->Scenes();
+}
+
+Application &Mode::getApplication()
+{
+	return _app;
+}
+
+const Application &Mode::getApplication() const
+{
+	return _app;
+}
