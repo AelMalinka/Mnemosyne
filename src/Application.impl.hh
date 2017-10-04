@@ -26,15 +26,41 @@
 						), std::string>::value
 					>::type
 				> : std::true_type {};
+
+				template<typename F, typename = void>
+				struct get_extension
+				{
+					explicit get_extension(const F &f) : _f(f) {}
+					std::string operator () () const
+					{
+						return "";
+					}
+					private:
+						const F &_f;
+				};
+
+				template<typename F>
+				struct get_extension<
+					F,
+					typename std::enable_if<
+						detail::has_extension<F>::value
+					>::type
+				>
+				{
+					explicit get_extension(const F &f) : _f(f) {}
+					std::string operator () () const
+					{
+						return _f.Extension();
+					}
+					private:
+						const F &_f;
+				};
 			}
 
 			template<typename F>
 			auto Application::load(const std::string &path, F f) const
 			{
-				if(detail::has_extension<F>::value)
-					return f(findFullPath(path + f.Extension()));
-				else
-					return f(findFullPath(path));
+				return f(findFullPath(path + detail::get_extension(f)()));
 			}
 		}
 	}
