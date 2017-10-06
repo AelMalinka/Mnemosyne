@@ -28,8 +28,9 @@
 					virtual void onEvent(const Entropy::Event &) = 0;
 					virtual DefaultedList<Theia::Scene> &Scenes();
 					virtual const DefaultedList<Theia::Scene> &Scenes() const;
-					virtual Application &getApplication();
-					virtual const Application &getApplication() const;
+				protected:
+					virtual Application &App();
+					virtual const Application &App() const;
 				private:
 					Application &_app;
 					std::list<DefaultedList<Theia::Scene>::iterator> _scenes;

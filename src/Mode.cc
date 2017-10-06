@@ -44,12 +44,12 @@ const DefaultedList<Scene> &Mode::Scenes() const
 	return _app.Windows()->Scenes();
 }
 
-Application &Mode::getApplication()
+Application &Mode::App()
 {
 	return _app;
 }
 
-const Application &Mode::getApplication() const
+const Application &Mode::App() const
 {
 	return _app;
 }
