@@ -79,9 +79,10 @@ void Application::setMode(const PolymorphicList<Mode>::iterator &i)
 	onEvent(ev);
 }
 
-void Application::addMode(const shared_ptr<Mode> &mode)
+PolymorphicList<Mode>::iterator Application::addMode(const shared_ptr<Mode> &mode)
 {
 	_modes.push_back(mode);
+	return --_modes.end();
 }
 
 void Application::onEvent(const Entropy::Event &ev)

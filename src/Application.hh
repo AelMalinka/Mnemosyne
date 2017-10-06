@@ -29,7 +29,7 @@
 					virtual void operator () ();
 					virtual Mode &getMode();
 					virtual void setMode(const PolymorphicList<Mode>::iterator &);
-					virtual void addMode(const std::shared_ptr<Mode> &);
+					virtual PolymorphicList<Mode>::iterator addMode(const std::shared_ptr<Mode> &);
 					template<typename F>
 					auto load(const std::string &, F) const;
 					virtual void addSearchPath(const std::string &);
