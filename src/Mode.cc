@@ -12,7 +12,9 @@ using Entropy::Theia::Scene;
 
 Mode::Mode(Application &a)
 	: _app(a)
-{}
+{
+	setScene(addScene());
+}
 
 Mode::~Mode() = default;
 
@@ -42,6 +44,21 @@ DefaultedList<Scene> &Mode::Scenes()
 const DefaultedList<Scene> &Mode::Scenes() const
 {
 	return _app.Windows()->Scenes();
+}
+
+Scene &Mode::Current()
+{
+	return *_current;
+}
+
+const Scene &Mode::Current() const
+{
+	return *_current;
+}
+
+DefaultedList<Scene>::iterator Mode::getIterator() const
+{
+	return _current;
 }
 
 Application &Mode::App()

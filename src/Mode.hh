@@ -29,6 +29,9 @@
 					virtual DefaultedList<Theia::Scene> &Scenes();
 					virtual const DefaultedList<Theia::Scene> &Scenes() const;
 				protected:
+					virtual Theia::Scene &Current();
+					virtual const Theia::Scene &Current() const;
+					DefaultedList<Theia::Scene>::iterator getIterator() const;
 					virtual Application &App();
 					virtual const Application &App() const;
 				private:
