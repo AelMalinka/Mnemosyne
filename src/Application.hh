@@ -8,7 +8,7 @@
 #	include "Exception.hh"
 #	include <Entropy/Aoede/Application.hh>
 #	include <Entropy/Theia/Application.hh>
-#	include <Entropy/Theia/Utility/PolymorphicList.hh>
+#	include <Entropy/PolymorphicList.hh>
 
 #	include "Mode.hh"
 
