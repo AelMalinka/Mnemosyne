@@ -126,7 +126,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Application.cc" />
+    <ClCompile Include="..\..\src\Event.cc" />
+    <ClCompile Include="..\..\src\Events.cc" />
     <ClCompile Include="..\..\src\Logger.cc" />
+    <ClCompile Include="..\..\src\Mode.cc" />
     <ClCompile Include="..\..\src\Resources\File.cc" />
     <ClCompile Include="..\..\src\Resources\Json.cc" />
     <ClCompile Include="..\..\src\Resources\Png.cc" />
@@ -136,11 +139,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Application.hh" />
+    <ClInclude Include="..\..\src\Application.impl.hh" />
+    <ClInclude Include="..\..\src\Event.hh" />
+    <ClInclude Include="..\..\src\Events.hh" />
     <ClInclude Include="..\..\src\Exception.hh" />
     <ClInclude Include="..\..\src\Handle.hh" />
     <ClInclude Include="..\..\src\Handle.impl.hh" />
+    <ClInclude Include="..\..\src\Mode.hh" />
     <ClInclude Include="..\..\src\Resources\Exception.hh" />
     <ClInclude Include="..\..\src\Resources\File.hh" />
+    <ClInclude Include="..\..\src\Resources\Import.hh" />
+    <ClInclude Include="..\..\src\Resources\Import.impl.hh" />
     <ClInclude Include="..\..\src\Resources\Json.hh" />
     <ClInclude Include="..\..\src\Resources\Png.hh" />
     <ClInclude Include="..\..\src\Resources\Shader.hh" />

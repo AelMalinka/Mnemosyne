@@ -18,6 +18,9 @@
     <Filter Include="Source Files\Resources">
       <UniqueIdentifier>{2f11f686-d35e-4b6a-8e6c-6e89b1652e04}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Implementation Files\Resources">
+      <UniqueIdentifier>{140318a5-cd5b-4c35-a08e-41cd011d0cac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Application.cc">
@@ -43,6 +46,15 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Resources\Texture.cc">
       <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Event.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Events.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Mode.cc">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +90,24 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Resources\Texture.hh">
       <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Resources\Import.hh">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Resources\Import.impl.hh">
+      <Filter>Implementation Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Application.impl.hh">
+      <Filter>Implementation Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Event.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Events.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Mode.hh">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
