@@ -39,7 +39,9 @@ libmnemosyne_la_SOURCES = \
 	src/Resources/Texture.cc
 libmnemosyne_la_LDFLAGS = -version-info 0
 
-check_PROGRAMS =
+check_PROGRAMS = \
+	hand-basic
+
 noinst_DATA = \
 	data/basic.json \
 	data/pnglogo.png \
@@ -49,6 +51,9 @@ noinst_DATA = \
 
 all-local:
 	test -d data || $(LN_S) $(top_srcdir)/data $(builddir)/data
+
+hand_basic_SOURCES = test/hand/basic.cc
+hand_basic_LDADD = libmnemosyne.la
 
 if JSON
 resourceheaders_HEADERS += \
