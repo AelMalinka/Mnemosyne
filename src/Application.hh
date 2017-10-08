@@ -19,8 +19,8 @@
 			ENTROPY_EXCEPTION(NoMode, "No Game Mode Loaded", Exception);
 
 			class Application :
-				public virtual Aoede::Application,
-				public virtual Theia::Application
+				public Aoede::Application,
+				public Theia::Application
 			{
 				public:
 					Application();
