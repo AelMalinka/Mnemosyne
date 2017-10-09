@@ -5,7 +5,6 @@
 #if !defined ENTROPY_MNEMOSYNE_TEST_INTERFACE_INC
 #	define ENTROPY_MNEMOSYNE_TEST_INTERFACE_INC
 
-#	include "Exception.hh"
 #	include <Entropy/Module.hh>
 
 	namespace Entropy
