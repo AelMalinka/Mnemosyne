@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\External\jsoncpp\include;F:\Source\External\libepoxy\build\include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>DEBUG</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_CXX_FS;HAVE_CXX_FS_EXPERIMENTAL;DEBUG</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
       <DisableSpecificWarnings>4250;4996</DisableSpecificWarnings>
     </ClCompile>
@@ -87,7 +87,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\External\jsoncpp\include;</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>DEBUG</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_CXX_FS;HAVE_CXX_FS_EXPERIMENTAL;DEBUG</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
       <DisableSpecificWarnings>4250;4996</DisableSpecificWarnings>
     </ClCompile>
@@ -102,6 +102,7 @@
       <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\External\jsoncpp\include;F:\Source\External\libepoxy\build\include</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
       <DisableSpecificWarnings>4250;4996</DisableSpecificWarnings>
+      <PreprocessorDefinitions>HAVE_CXX_FS;HAVE_CXX_FS_EXPERIMENTAL;</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -118,6 +119,7 @@
       <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\glm;F:\Source\External\glfw\include;F:\Source\External\libepoxy\include;F:\Source\Repos\Theia\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\Repos\Aoede\win\include;F:\Source\External\jsoncpp\include;</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
       <DisableSpecificWarnings>4250;4996</DisableSpecificWarnings>
+      <PreprocessorDefinitions>HAVE_CXX_FS;HAVE_CXX_FS_EXPERIMENTAL;</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -155,6 +157,14 @@
     <ClInclude Include="..\..\src\Resources\Shader.hh" />
     <ClInclude Include="..\..\src\Resources\Sound.hh" />
     <ClInclude Include="..\..\src\Resources\Texture.hh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Aoede\win\Aoede\Aoede.vcxproj">
+      <Project>{160f8f3f-597c-44f5-a38c-6916f2ec88a5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Theia\win\Theia\Theia.vcxproj">
+      <Project>{54ced1f7-4c0e-4bb5-931e-eccc4cc7a4cf}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
