@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Application">
+      <UniqueIdentifier>{66ad4205-b5ee-44f2-90da-f9c3c6619b03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{8772ee1c-315e-4565-91ab-96e577b71caa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data Files">
+      <UniqueIdentifier>{2974b407-7adf-4bc4-ba36-ae5242bdd293}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Handle">
+      <UniqueIdentifier>{0836c8ea-6b9e-44bc-8f00-72ace5dbdf62}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\test\resources\file.cc">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\resources\import.cc">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\resources\json.cc">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\resources\png.cc">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\resources\shader.cc">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\resources\sound.cc">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\resources\texture.cc">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\handle\basic.cc">
+      <Filter>Handle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test\application\basic.cc">
+      <Filter>Application</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\basic.json">
+      <Filter>Data Files</Filter>
+    </None>
+    <None Include="..\..\data\shader.frag">
+      <Filter>Data Files</Filter>
+    </None>
+    <None Include="..\..\data\shader.vert">
+      <Filter>Data Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\data\pnglogo.png">
+      <Filter>Data Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\data\sound.oga">
+      <Filter>Data Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="text">
+      <Filter>Data Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
