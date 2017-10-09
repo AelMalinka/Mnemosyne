@@ -3,6 +3,7 @@
 */
 
 #include "Application.hh"
+#include <Entropy/String.hh>
 
 #ifdef HAVE_CONFIG_H
 #	include "config.h"
@@ -109,7 +110,11 @@ string Application::findFullPath(const string &file) const
 			ENTROPY_LOG(Log, Severity::Debug) << "Trying " << i << " at " << p;
 
 			if(exists(p)) {
-				return p;
+#				ifndef _WIN32
+					return p;
+#				else
+					return string_cast(static_cast<path::string_type>(p));
+#				endif
 			}
 		}
 #	endif

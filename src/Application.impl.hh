@@ -60,7 +60,7 @@
 			template<typename F>
 			auto Application::load(const std::string &path, F f) const
 			{
-				return f(findFullPath(path + detail::get_extension(f)()));
+				return f(findFullPath(path + detail::get_extension<F>(f)()));
 			}
 		}
 	}
