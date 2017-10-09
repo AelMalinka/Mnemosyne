@@ -44,20 +44,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\data\basic.json">
-      <Filter>Data Files</Filter>
-    </None>
-    <None Include="..\..\data\shader.frag">
-      <Filter>Data Files</Filter>
-    </None>
-    <None Include="..\..\data\shader.vert">
-      <Filter>Data Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\data\pnglogo.png">
-      <Filter>Data Files</Filter>
-    </Image>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\data\sound.oga">
@@ -66,5 +53,9 @@
     <CustomBuild Include="text">
       <Filter>Data Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\..\data\basic.json" />
+    <CustomBuild Include="..\..\data\shader.frag" />
+    <CustomBuild Include="..\..\data\shader.vert" />
+    <CustomBuild Include="..\..\data\pnglogo.png" />
   </ItemGroup>
 </Project>
