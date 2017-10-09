@@ -13,8 +13,11 @@ namespace {
 	TEST(ResourceFile, Basic) {
 		auto h = Resources::File()("data/text");
 
+		EXPECT_FALSE(h->bad());
+		EXPECT_FALSE(h->fail());
+
 		string content;
-		while(!h->eof()) {
+		while(!h->eof() && !h->bad() && !h->fail()) {
 			string l;
 			getline(*h, l);
 
