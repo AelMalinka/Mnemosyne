@@ -79,7 +79,7 @@
     </ClCompile>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)data"
-copy /Y "$(OutDir)$(ProjectName).dll" "$(OutDir)data"</Command>
+copy /Y "$(OutDir)$(ProjectName).dll" "$(OutDir)data\module.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -91,7 +91,7 @@ copy /Y "$(OutDir)$(ProjectName).dll" "$(OutDir)data"</Command>
     </ClCompile>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)data"
-copy /Y "$(OutDir)$(ProjectName).dll" "$(OutDir)data"</Command>
+copy /Y "$(OutDir)$(ProjectName).dll" "$(OutDir)data\module.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -109,7 +109,7 @@ copy /Y "$(OutDir)$(ProjectName).dll" "$(OutDir)data"</Command>
     </Link>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)data"
-copy /Y "$(OutDir)$(ProjectName).dll" "$(OutDir)data"</Command>
+copy /Y "$(OutDir)$(ProjectName).dll" "$(OutDir)data\module.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,7 +127,7 @@ copy /Y "$(OutDir)$(ProjectName).dll" "$(OutDir)data"</Command>
     </Link>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)data"
-copy /Y "$(OutDir)$(ProjectName).dll" "$(OutDir)data"</Command>
+copy /Y "$(OutDir)$(ProjectName).dll" "$(OutDir)data\module.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
