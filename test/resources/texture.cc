@@ -3,6 +3,7 @@
 */
 
 #include <gtest/gtest.h>
+#include <Entropy/Theia/Application.hh>
 #include "Resources/Texture.hh"
 
 using namespace std;
@@ -12,6 +13,8 @@ using namespace Entropy::Theia;
 
 namespace {
 	TEST(ResourceTexture, Create) {
+		Application app;
+
 		auto h = Resources::Texture(GL::Texture::Texture2D)("data/pnglogo.png");
 	}
 }
