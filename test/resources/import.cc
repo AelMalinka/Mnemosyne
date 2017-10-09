@@ -13,7 +13,8 @@ using namespace Entropy::Mnemosyne::Test;
 
 namespace {
 	TEST(ResourceImport, Basic) {
-		auto h = Resources::Import<Interface>()("data/module.so");
+		auto i = Resources::Import<Interface>();
+		auto h = i("data/module"s + i.Extension());
 
 		EXPECT_EQ(h->Name(), "Module"s);
 		EXPECT_EQ(h->Value(), 11ul);
