@@ -110,11 +110,8 @@ string Application::findFullPath(const string &file) const
 			ENTROPY_LOG(Log, Severity::Debug) << "Trying " << i << " at " << p;
 
 			if(exists(p)) {
-#				ifndef _WIN32
-					return p;
-#				else
-					return string_cast(static_cast<path::string_type>(p));
-#				endif
+				// 2017-10-10 AMR HACK: Windows requires casting path from a wstring to a string
+				return string_cast(static_cast<path::string_type>(p));
 			}
 		}
 #	endif
