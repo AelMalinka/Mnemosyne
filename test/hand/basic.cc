@@ -64,7 +64,7 @@ class MyApp :
 #ifdef _WIN32
 	int APIENTRY WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 #else
-	int main(int ArgC, char *ArgV[])
+	int main()
 #endif
 {
 	try
