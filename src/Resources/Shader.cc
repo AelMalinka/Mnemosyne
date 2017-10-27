@@ -40,6 +40,11 @@ Handle<GL::Shader> Shader::operator () (const string &path)
 	fstream file(path, ios_base::in);
 	string code;
 
+	if(file.bad() || file.fail())
+		ENTROPY_THROW(Exception("Failed to load shader") <<
+			ResourcePath(path)
+		);
+
 	while(!file.eof()) {
 		string line;
 		getline(file, line);
