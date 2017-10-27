@@ -13,6 +13,7 @@
 #include "Resources/Shader.hh"
 
 using namespace std;
+using namespace Entropy::Log;
 using namespace Entropy::Mnemosyne;
 using namespace Entropy::Theia::GL;
 
@@ -28,6 +29,8 @@ namespace detail {
 		Array array;
 	};
 }
+
+Logger AppLog("Application");
 
 class MyObject :
 	private SharedData<::detail::object>,
@@ -91,6 +94,7 @@ void MyMode::onEvent(const Entropy::Event &ev)
 ::detail::object::object(Application &app)
 	: program(), array()
 {
+	ENTROPY_LOG(AppLog, Severity::Debug) << "MyObject: Started static initialization";
 	auto v = app.load("shader.vert", Resources::Shader());
 	auto f = app.load("shader.frag", Resources::Shader());
 
@@ -108,7 +112,9 @@ void MyMode::onEvent(const Entropy::Event &ev)
 	Buffer buf(Buffer::Vertex);
 	buf.Data(vertices, Buffer::Static);
 
-	array.Bind(program, buf, "in_positition"s, 3, GL_FLOAT);
+	array.Bind(program, buf, "in_position"s, 3, GL_FLOAT);
+
+	ENTROPY_LOG(AppLog, Severity::Debug) << "MyObject: Finished static initialization";
 }
 
 void MyObject::Draw()
