@@ -20,4 +20,8 @@ namespace {
 		Window win("Test Window (hidden)"s, 640, 360);
 		auto h = Resources::Shader()("data/shader.frag");
 	}
+	TEST(ResourceShader, NotExistant) {
+		Window win("Test Window (hidden)"s, 640, 360);
+		EXPECT_THROW(Resources::Shader()("data/notfound.comp"), Resources::Exception);
+	}
 }
