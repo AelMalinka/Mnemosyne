@@ -126,6 +126,8 @@ void MyMode::onEvent(const Entropy::Event &ev)
 
 void MyObject::Draw()
 {
+	shared()->program.SetUniform("in_color"s, glm::vec3(1.0, 0.0, 1.0));
+
 	Bind p(shared()->program), a(shared()->array);
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
@@ -160,5 +162,5 @@ void MyObject::UpdateCamera(const Camera &c)
 
 void MyObject::UpdateScreen(const Screen &s)
 {
-	shared()->program.SetUniform("view"s, s.Perspective());
+	shared()->program.SetUniform("projection"s, s.Perspective());
 }
