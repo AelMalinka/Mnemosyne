@@ -4,13 +4,13 @@
 
 #include <cstdlib>
 #include <iostream>
+#include "Application.hh"
+#include "Resources/Shader.hh"
 #include <Entropy/SharedData.hh>
 #include <Entropy/Theia/Object.hh>
 #include <Entropy/Theia/Events.hh>
 #include <Entropy/Theia/GL/Program.hh>
 #include <Entropy/Theia/GL/Array.hh>
-#include "Application.hh"
-#include "Resources/Shader.hh"
 
 using namespace std;
 using namespace Entropy::Mnemosyne;
@@ -55,22 +55,29 @@ class MyApp :
 	public Application
 {
 	public:
-		MyApp(const int, char *[]);
+		MyApp();
 };
 
-int main(int ArgC, char *ArgV[])
+#ifdef _WIN32
+	int APIENTRY WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
+#else
+	int main(int ArgC, char *ArgV[])
+#endif
 {
 	try
 	{
-		MyApp app(ArgC, ArgV);
+		MyApp app;
 		app();
 
 		return EXIT_SUCCESS;
 	}
 	catch(exception &e)
 	{
-		cerr << e << endl;
-
+#		ifdef _WIN32
+			MessageBox(nullptr, e.what(), "Error!", MB_ICONEXCLAMATION | MB_OK);
+#		else
+			cerr << e << endl;	
+#		endif
 		return EXIT_FAILURE;
 	}
 }
@@ -117,8 +124,8 @@ void MyObject::Draw()
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
 
-MyApp::MyApp(const int ArgC, char *ArgV[])
-	: Application(ArgC, ArgV)
+MyApp::MyApp()
+	: Application()
 {
 	addSearchPath("data");
 
