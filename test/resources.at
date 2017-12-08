@@ -45,7 +45,6 @@ AT_CLEANUP
 
 AT_SETUP([Module Resource])
 AT_SKIP_IF([test -z $GTEST])
-AT_CHECK([cp -r "${BUILD}/data/" data], [])
-AT_CHECK([cp "${BUILD}/module.so" data], [])
+AT_CHECK([cp "${BUILD}/module.so" .], [])
 AT_CHECK([resource-import], [], [ignore], [ignore])
 AT_CLEANUP

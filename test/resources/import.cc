@@ -11,12 +11,17 @@ using namespace testing;
 using namespace Entropy::Mnemosyne;
 using namespace Entropy::Mnemosyne::Test;
 
+#define TEST_BEGIN try {
+#define TEST_END } catch(exception &e) { FAIL() << e << endl; }
+
 namespace {
 	TEST(ResourceImport, Basic) {
-		auto i = Resources::Import<Interface>();
-		auto h = i("data/module"s + i.Extension());
+		TEST_BEGIN
+			auto i = Resources::Import<Interface>();
+			auto h = i("module"s + i.Extension());
 
-		EXPECT_EQ(h->Name(), "Module"s);
-		EXPECT_EQ(h->Value(), 11ul);
+			EXPECT_EQ(h->Name(), "Module"s);
+			EXPECT_EQ(h->Value(), 11ul);
+		TEST_END
 	}
 }
