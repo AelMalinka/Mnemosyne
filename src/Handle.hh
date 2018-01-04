@@ -30,6 +30,7 @@
 					const T *get() const;
 					const T &operator *() const;
 					const T *operator -> () const;
+					const std::shared_ptr<T> &shared() const;
 				private:
 					std::shared_ptr<T> _data;
 			};
