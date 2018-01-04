@@ -26,8 +26,6 @@
 					virtual DefaultedList<Theia::Scene>::iterator addScene();
 					virtual void setScene(const DefaultedList<Theia::Scene>::iterator &);
 					virtual void onEvent(const Entropy::Event &) = 0;
-					virtual DefaultedList<Theia::Scene> &Scenes();
-					virtual const DefaultedList<Theia::Scene> &Scenes() const;
 				protected:
 					virtual Theia::Scene &Current();
 					virtual const Theia::Scene &Current() const;
