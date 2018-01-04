@@ -118,3 +118,13 @@ string Application::findFullPath(const string &file) const
 
 	return file;
 }
+
+PolymorphicList<Mode>::iterator Application::begin()
+{
+	return _modes.begin();
+}
+
+PolymorphicList<Mode>::iterator Application::end()
+{
+	return _modes.end();
+}
