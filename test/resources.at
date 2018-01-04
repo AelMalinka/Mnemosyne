@@ -43,6 +43,12 @@ AT_CHECK([ln -s "${BUILD}/data" data], [])
 AT_CHECK([resource-texture], [], [ignore], [ignore])
 AT_CLEANUP
 
+AT_SETUP([Font Resource])
+AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([ln -s "${BUILD}/data" data], [])
+AT_CHECK([resource-font], [], [ignore], [ignore])
+AT_CLEANUP
+
 AT_SETUP([Module Resource])
 AT_SKIP_IF([test -z $GTEST])
 AT_CHECK([cp "${BUILD}/module.so" .], [])

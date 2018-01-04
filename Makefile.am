@@ -19,6 +19,7 @@ resourceheadersdir = $(mainheadersdir)/Resources
 resourceheaders_HEADERS = \
 	src/Resources/Exception.hh \
 	src/Resources/File.hh \
+	src/Resources/Font.hh \
 	src/Resources/Png.hh \
 	src/Resources/Shader.hh \
 	src/Resources/Sound.hh \
@@ -33,6 +34,7 @@ libmnemosyne_la_SOURCES = \
 	src/Logger.cc \
 	src/Mode.cc \
 	src/Resources/File.cc \
+	src/Resources/Font.cc \
 	src/Resources/Png.cc \
 	src/Resources/Shader.cc \
 	src/Resources/Sound.cc \
@@ -71,6 +73,7 @@ check_PROGRAMS += \
 	application-basic \
 	handle-basic \
 	resource-file \
+	resource-font \
 	resource-import \
 	resource-png \
 	resource-shader \
@@ -87,6 +90,9 @@ handle_basic_LDADD = $(gtestLDADD)
 
 resource_file_SOURCES = test/resources/file.cc
 resource_file_LDADD = $(gtestLDADD)
+
+resource_font_SOURCES = test/resources/font.cc
+resource_font_LDADD = $(gtestLDADD)
 
 resource_import_SOURCES = test/resources/import.cc
 resource_import_CPPFLAGS = $(AM_CPPFLAGS) -I$(top_srcdir)/test/module
