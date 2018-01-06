@@ -24,3 +24,11 @@ Handle<Value> Resources::Json::operator () (const string &path)
 
 	return ret;
 }
+
+void Resources::Json::operator () (const string &path, Handle<Value> &handle)
+{
+	ENTROPY_LOG(Log, Severity::Info) << "Saving Json: " << path;
+
+	fstream file(path, ios_base::out);
+	file << *handle << endl;
+}

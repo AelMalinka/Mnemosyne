@@ -62,6 +62,12 @@
 			{
 				return f(findFullPath(path + detail::get_extension<F>(f)()));
 			}
+
+			template<typename T, typename F>
+			void Application::write(const std::string &path, Handle<T> &handle, F f) const
+			{
+				f(findFullPath(path + detail::get_extension<F>(f)()), handle);
+			}
 		}
 	}
 

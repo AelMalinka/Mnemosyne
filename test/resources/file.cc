@@ -27,4 +27,33 @@ namespace {
 
 		EXPECT_EQ(content, "This is a test file\nWith multiple lines\nand some #$%^#$&#*!#@$%& garbage\n"s);
 	}
+
+	TEST(ResourceFile, WriteRead) {
+		auto h = Resources::File()("data/text");
+
+		EXPECT_FALSE(h->bad());
+		EXPECT_FALSE(h->fail());
+
+		(*h) << "Hello File!" << endl;
+
+		EXPECT_FALSE(h->bad());
+		EXPECT_FALSE(h->fail());
+
+		Resources::File()("data/text", h);
+
+		auto f = Resources::File()("data/text");
+
+		EXPECT_FALSE(f->bad());
+		EXPECT_FALSE(f->fail());
+
+		string content;
+		while(!f->eof() && !f->bad() && !f->fail()) {
+			string l;
+			getline(*f, l);
+			if(l != "")
+				content += l + "\n"s;
+		}
+
+		EXPECT_EQ(content, "Hello File!\nst file\nWith multiple lines\nand some #$%^#$&#*!#@$%& garbage\n"s);
+	}
 }

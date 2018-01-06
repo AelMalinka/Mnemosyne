@@ -27,7 +27,8 @@ AT_CLEANUP
 
 AT_SETUP([Json Resource])
 AT_SKIP_IF([test -z $GTEST])
-AT_CHECK([ln -s "${BUILD}/data" data], [])
+AT_CHECK([mkdir data], [])
+AT_CHECK([cp -a "${BUILD}/data/basic.json" data], [])
 AT_CHECK([resource-json], [], [ignore], [ignore])
 AT_CLEANUP
 

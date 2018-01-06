@@ -11,6 +11,7 @@
 #	include <Entropy/PolymorphicList.hh>
 
 #	include "Mode.hh"
+#	include "Handle.hh"
 
 	namespace Entropy
 	{
@@ -32,6 +33,9 @@
 					virtual PolymorphicList<Mode>::iterator addMode(const std::shared_ptr<Mode> &);
 					template<typename F>
 					auto load(const std::string &, F) const;
+					// 2018-01-06 AMR TODO: saving non-existant file
+					template<typename T, typename F>
+					void write(const std::string &, Handle<T> &, F) const;
 					virtual void addSearchPath(const std::string &);
 				protected:
 					virtual void onEvent(const Entropy::Event &);

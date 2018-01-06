@@ -19,6 +19,7 @@
 				{
 					public:
 						virtual Handle<std::fstream> operator () (const std::string &);
+						virtual void operator () (const std::string &, Handle<std::fstream> &);
 				};
 			}
 		}

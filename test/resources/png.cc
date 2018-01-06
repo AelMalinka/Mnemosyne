@@ -10,7 +10,7 @@ using namespace testing;
 using namespace Entropy::Mnemosyne;
 
 namespace {
-	TEST(ResourcePng, Create) {
+	TEST(ResourcePng, Basic) {
 		auto h = Resources::Png()("data/pnglogo.png");
 	}
 }

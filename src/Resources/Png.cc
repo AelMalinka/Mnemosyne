@@ -15,3 +15,10 @@ Handle<PNG> Png::operator () (const string &path)
 
 	return Handle<PNG>(make_shared<PNG>(path));
 }
+
+void Png::operator () (const string &path, Handle<PNG> &handle)
+{
+	ENTROPY_LOG(Log, Severity::Info) << "Writing Png: " << path;
+
+	handle->Write(path);
+}
