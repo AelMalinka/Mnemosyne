@@ -119,6 +119,16 @@ string Application::findFullPath(const string &file) const
 	return file;
 }
 
+void Application::createPath(const string &dir) const
+{
+#	ifdef HAVE_CXX_FS
+		ENTROPY_LOG(Log, Severity::Debug) << "Create Directory " << dir;
+
+		path p(dir);
+		create_directories(p.parent_path());
+#	endif
+}
+
 PolymorphicList<Mode>::iterator Application::begin()
 {
 	return _modes.begin();

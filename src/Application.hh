@@ -41,6 +41,7 @@
 					virtual void onEvent(const Entropy::Event &);
 				protected:
 					virtual std::string findFullPath(const std::string &) const;
+					virtual void createPath(const std::string &) const;
 				protected:
 					PolymorphicList<Mode>::iterator begin();
 					PolymorphicList<Mode>::iterator end();

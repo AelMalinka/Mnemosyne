@@ -66,7 +66,8 @@
 			template<typename T, typename F>
 			void Application::write(const std::string &path, Handle<T> &handle, F f) const
 			{
-				f(findFullPath(path + detail::get_extension<F>(f)()), handle);
+				createPath(path);
+				f(path + detail::get_extension<F>(f)(), handle);
 			}
 		}
 	}
