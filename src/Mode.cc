@@ -20,6 +20,8 @@ Mode::~Mode() = default;
 
 void Mode::makeCurrent()
 {
+	// 2018-01-10 AMR NOTE: update drawables that might be on multiple Scenes
+	_current->getCamera().RunCallbacks();
 	_app.Windows()->Scenes().setDefault(_current);
 }
 
