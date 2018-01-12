@@ -6,7 +6,6 @@
 #	define ENTROPY_MNEMOSYNE_EVENTS_INC
 
 #	include "Event.hh"
-#	include "Application.hh"
 
 	namespace Entropy
 	{

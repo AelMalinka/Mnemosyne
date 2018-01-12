@@ -21,6 +21,7 @@ using Entropy::SharedData;
 using Entropy::Theia::Object;
 using Entropy::Theia::Camera;
 using Entropy::Theia::Screen;
+using Entropy::Theia::Events::Key;
 
 namespace detail {
 	struct object {
@@ -58,7 +59,7 @@ class MyMode :
 	public:
 		MyMode(MyApp &);
 	private:
-		void onEvent(const Entropy::Event &);
+		void onEvent(const Key &);
 };
 
 #ifdef _WIN32
@@ -85,16 +86,10 @@ class MyMode :
 	}
 }
 
-void MyMode::onEvent(const Entropy::Event &ev)
+void MyMode::onEvent(const Key &k)
 {
-	using namespace Entropy::Theia::Events;
-
-	if(ev.Id() == Key::Id) {
-		const Key &k = dynamic_cast<const Key &>(ev);
-
-		if(k.Action() == GLFW_PRESS && k.Code() == GLFW_KEY_ESCAPE) {
-			App().Windows()->Close();
-		}
+	if(k.Action() == GLFW_PRESS && k.Code() == GLFW_KEY_ESCAPE) {
+		App().Windows()->Close();
 	}
 }
 
