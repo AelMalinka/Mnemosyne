@@ -13,7 +13,9 @@ mainheaders_HEADERS = \
 	src/Exception.hh \
 	src/Handle.hh \
 	src/Handle.impl.hh \
-	src/Mode.hh
+	src/Mode.hh \
+	src/Mode.impl.hh \
+	src/ModeBase.hh
 
 resourceheadersdir = $(mainheadersdir)/Resources
 resourceheaders_HEADERS = \
@@ -28,17 +30,17 @@ resourceheaders_HEADERS = \
 lib_LTLIBRARIES = libmnemosyne.la
 
 libmnemosyne_la_SOURCES = \
-	src/Application.cc \
-	src/Event.cc \
-	src/Events.cc \
-	src/Logger.cc \
-	src/Mode.cc \
 	src/Resources/File.cc \
 	src/Resources/Font.cc \
 	src/Resources/Png.cc \
 	src/Resources/Shader.cc \
 	src/Resources/Sound.cc \
-	src/Resources/Texture.cc
+	src/Resources/Texture.cc \
+	src/Application.cc \
+	src/Event.cc \
+	src/Events.cc \
+	src/Logger.cc \
+	src/ModeBase.cc
 libmnemosyne_la_LDFLAGS = -version-info 0
 
 check_PROGRAMS = \

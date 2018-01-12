@@ -45,20 +45,20 @@ class MyObject :
 		void UpdateScreen(const Screen &);
 };
 
-class MyMode :
-	public Mode
-{
-	public:
-		MyMode(Application &);
-	private:
-		void onEvent(const Entropy::Event &);
-};
-
 class MyApp :
 	public Application
 {
 	public:
 		MyApp();
+};
+
+class MyMode :
+	public Mode<MyApp>
+{
+	public:
+		MyMode(MyApp &);
+	private:
+		void onEvent(const Entropy::Event &);
 };
 
 #ifdef _WIN32
@@ -140,7 +140,7 @@ MyApp::MyApp()
 	setMode(addMode(make_shared<MyMode>(*this)));
 }
 
-MyMode::MyMode(Application &app)
+MyMode::MyMode(MyApp &app)
 	: Mode(app)
 {
 	Current().emplaceDrawable<MyObject>(app);

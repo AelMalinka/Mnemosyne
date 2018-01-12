@@ -63,24 +63,16 @@ void Application::operator () ()
 	Theia::Application::operator () ();
 }
 
-Mode &Application::getMode()
-{
-	if(_current == _modes.end())
-		ENTROPY_THROW(NoMode());
-
-	return *_current;
-}
-
-void Application::setMode(const PolymorphicList<Mode>::iterator &i)
+void Application::setMode(const PolymorphicList<ModeBase>::iterator &i)
 {
 	_current = i;
 	_current->makeCurrent();
 
-	Events::ModeChange ev(*this, getMode());
+	Events::ModeChange ev;
 	onEvent(ev);
 }
 
-PolymorphicList<Mode>::iterator Application::addMode(const shared_ptr<Mode> &mode)
+PolymorphicList<ModeBase>::iterator Application::addMode(const shared_ptr<ModeBase> &mode)
 {
 	_modes.push_back(mode);
 	return --_modes.end();
@@ -129,12 +121,12 @@ void Application::createPath(const string &dir) const
 #	endif
 }
 
-PolymorphicList<Mode>::iterator Application::begin()
+PolymorphicList<ModeBase>::iterator Application::begin()
 {
 	return _modes.begin();
 }
 
-PolymorphicList<Mode>::iterator Application::end()
+PolymorphicList<ModeBase>::iterator Application::end()
 {
 	return _modes.end();
 }

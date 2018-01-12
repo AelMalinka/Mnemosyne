@@ -19,12 +19,7 @@
 				{
 					public:
 						static constexpr std::size_t Id = Event::First;
-						ModeChange(Application &, Mode &);
-						Application &getApplication() const;
-						Mode &getMode() const;
-					private:
-						Application &_app;
-						Mode &_mode;
+						ModeChange();
 				};
 			}
 		}

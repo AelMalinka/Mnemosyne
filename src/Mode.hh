@@ -5,41 +5,28 @@
 #if !defined ENTROPY_MNEMOSYNE_MODE_INC
 #	define ENTROPY_MNEMOSYNE_MODE_INC
 
-#	include "Exception.hh"
-#	include <Entropy/Event.hh>
-#	include <Entropy/Tethys/Timer.hh>
-#	include <Entropy/Theia/Scene.hh>
-#	include <list>
+#	include "ModeBase.hh"
 
 	namespace Entropy
 	{
 		namespace Mnemosyne
 		{
-			class Application;
-
-			class Mode
+			template<typename Application>
+			class Mode :
+				public ModeBase
 			{
 				public:
 					Mode(Application &);
 					virtual ~Mode();
-					virtual void makeCurrent();
-					virtual DefaultedList<Theia::Scene>::iterator addScene();
-					virtual void setScene(const DefaultedList<Theia::Scene>::iterator &);
-					virtual void onEvent(const Entropy::Event &) = 0;
 				protected:
-					virtual Theia::Scene &Current();
-					virtual const Theia::Scene &Current() const;
-					DefaultedList<Theia::Scene>::iterator getIterator() const;
 					virtual Application &App();
 					virtual const Application &App() const;
 				private:
 					Application &_app;
-					std::list<DefaultedList<Theia::Scene>::iterator> _scenes;
-					DefaultedList<Theia::Scene>::iterator _current;
 			};
 		}
 	}
 
-#	include "Application.hh"
+#	include "Mode.impl.hh"
 
 #endif

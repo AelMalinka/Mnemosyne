@@ -8,16 +8,6 @@ using namespace Entropy::Mnemosyne::Events;
 using namespace Entropy::Mnemosyne;
 using namespace std;
 
-ModeChange::ModeChange(Application &app, Mode &mode)
-	: Event(Id), _app(app), _mode(mode)
+ModeChange::ModeChange()
+	: Event(Id)
 {}
-
-Application &ModeChange::getApplication() const
-{
-	return _app;
-}
-
-Mode &ModeChange::getMode() const
-{
-	return _mode;
-}
