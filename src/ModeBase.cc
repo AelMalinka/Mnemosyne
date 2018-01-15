@@ -6,13 +6,31 @@
 
 using namespace Entropy::Mnemosyne;
 using namespace std;
+using namespace Entropy::Theia::Events;
+using namespace Entropy::Mnemosyne::Events;
 
 using Entropy::DefaultedList;
 using Entropy::Theia::Scene;
 
-ModeBase::ModeBase(Application &app)
-	: _app(app)
+ModeBase::ModeBase(Application &app) :
+	_app(app),
+	_on_event(
+		[this](const Debug &e) { this->onEvent(e); },
+		[this](const Show &e) { this->onEvent(e); },
+		[this](const Hide &e) { this->onEvent(e); },
+		[this](const Close &e) { this->onEvent(e); },
+		[this](const Resize &e) { this->onEvent(e); },
+		[this](const Tick &e) { this->onEvent(e); },
+		[this](const Key &e) { this->onEvent(e); },
+		[this](const Mouse &e) { this->onEvent(e); },
+		[this](const ModeChange &e) { this->onEvent(e); }
+	),
+	_scenes(),
+	_current()
 {
+	_on_event.setEvent([this](const Entropy::Event &e) { this->onEvent(e); });
+	_on_event.setUnknown([this](const Entropy::Event &e) { this->onUnknownEvent(e); });
+
 	setScene(addScene());
 }
 
@@ -60,37 +78,7 @@ using namespace Entropy::Theia::Events;
 
 void ModeBase::onEvent(const Entropy::Event &ev)
 {
-	switch(ev.Id()) {
-		case Debug::Id:
-			onEvent(dynamic_cast<const Debug &>(ev));
-		break;
-		case Show::Id:
-			onEvent(dynamic_cast<const Show &>(ev));
-		break;
-		case Hide::Id:
-			onEvent(dynamic_cast<const Hide &>(ev));
-		break;
-		case Close::Id:
-			onEvent(dynamic_cast<const Close &>(ev));
-		break;
-		case Resize::Id:
-			onEvent(dynamic_cast<const Resize &>(ev));
-		break;
-		case Tick::Id:
-			onEvent(dynamic_cast<const Tick &>(ev));
-		break;
-		case Key::Id:
-			onEvent(dynamic_cast<const Key &>(ev));
-		break;
-		case Mouse::Id:
-			onEvent(dynamic_cast<const Mouse &>(ev));
-		break;
-		case ModeChange::Id:
-			onEvent(dynamic_cast<const ModeChange &>(ev));
-		break;
-		default:
-			onUnknownEvent(ev);
-	}
+	_on_event(ev);
 }
 
 void ModeBase::onUnknownEvent(const Entropy::Event &ev)

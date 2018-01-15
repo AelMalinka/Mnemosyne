@@ -5,18 +5,13 @@
 #if !defined ENTROPY_MNEMOSYNE_MODE_BASE_INC
 #	define ENTROPY_MNEMOSYNE_MODE_BASE_INC
 
-#	include "Exception.hh"
-#	include "Events.hh"
-#	include <Entropy/Theia/Events.hh>
+#	include "onEvent.hh"
 #	include <Entropy/Theia/Scene.hh>
 
 	namespace Entropy
 	{
 		namespace Mnemosyne
 		{
-			ENTROPY_EXCEPTION(UnknownEvent, "Unknown Event", Exception);
-			ENTROPY_ERROR_INFO(EventInfo, Entropy::Event);
-
 			class Application;
 
 			class ModeBase
@@ -44,6 +39,7 @@
 					DefaultedList<Theia::Scene>::iterator getIterator() const;
 				private:
 					Application &_app;
+					Entropy::Mnemosyne::onEvent _on_event;
 					std::list<DefaultedList<Theia::Scene>::iterator> _scenes;
 					DefaultedList<Theia::Scene>::iterator _current;
 			};

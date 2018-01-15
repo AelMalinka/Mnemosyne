@@ -15,7 +15,9 @@ mainheaders_HEADERS = \
 	src/Handle.impl.hh \
 	src/Mode.hh \
 	src/Mode.impl.hh \
-	src/ModeBase.hh
+	src/ModeBase.hh \
+	src/onEvent.hh \
+	src/onEvent.impl.hh
 
 resourceheadersdir = $(mainheadersdir)/Resources
 resourceheaders_HEADERS = \
@@ -40,7 +42,8 @@ libmnemosyne_la_SOURCES = \
 	src/Event.cc \
 	src/Events.cc \
 	src/Logger.cc \
-	src/ModeBase.cc
+	src/ModeBase.cc \
+	src/onEvent.cc
 libmnemosyne_la_LDFLAGS = -version-info 0
 
 check_PROGRAMS = \
