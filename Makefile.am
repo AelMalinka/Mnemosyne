@@ -9,6 +9,7 @@ mainheaders_HEADERS = \
 	src/Application.hh \
 	src/Application.impl.hh \
 	src/Event.hh \
+	src/EventHandler.hh \
 	src/Events.hh \
 	src/Exception.hh \
 	src/Handle.hh \
@@ -40,6 +41,7 @@ libmnemosyne_la_SOURCES = \
 	src/Resources/Texture.cc \
 	src/Application.cc \
 	src/Event.cc \
+	src/EventHandler.cc \
 	src/Events.cc \
 	src/Logger.cc \
 	src/ModeBase.cc \
