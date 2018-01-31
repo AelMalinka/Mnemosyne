@@ -11,10 +11,32 @@ using namespace Entropy::Mnemosyne;
 
 namespace {
 	TEST(Handle, Create) {
-		struct t {};
+		struct T {};
 
-		Handle<t> a(make_shared<t>());
-		Handle<t> b(a);
-		Handle<t> c(move(b));
+		Handle<T> a(make_shared<T>());
+		Handle<T> b(a);
+		Handle<T> c(move(b));
+
+		EXPECT_NE(a.get(), nullptr);
+		EXPECT_EQ(b.get(), nullptr);
+		EXPECT_NE(c.get(), nullptr);
+	}
+
+	TEST(Handle, Access) {
+		struct T {
+			int a;
+			string b;
+			float c;
+		};
+
+		Handle<T> a(make_shared<T>());
+
+		a.get()->a = 10;
+		(*a).b = "Hello World!";
+		a->c = 1.5;
+
+		EXPECT_EQ(a->a, 10);
+		EXPECT_EQ(a->b, "Hello World!"s);
+		EXPECT_EQ(a->c, 1.5);
 	}
 }
