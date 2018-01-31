@@ -67,6 +67,12 @@
 			{
 				return _data;
 			}
+
+			template<typename T>
+			Handle<T>::operator const std::shared_ptr<T> &() const
+			{
+				return _data;
+			}
 		}
 	}
 

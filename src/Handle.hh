@@ -18,19 +18,20 @@
 				public:
 					Handle();
 					explicit Handle(T *);
-					explicit Handle(const std::shared_ptr<T> &);
+					Handle(const std::shared_ptr<T> &);
 					Handle(const Handle<T> &);
 					Handle(Handle<T> &&);
 					virtual ~Handle();
+					T *get();
+					const T *get() const;
+					const std::shared_ptr<T> &shared() const;
 					Handle &operator = (const Handle<T> &);
 					Handle &operator = (Handle<T> &&);
-					T *get();
 					T &operator *();
 					T *operator -> ();
-					const T *get() const;
 					const T &operator *() const;
 					const T *operator -> () const;
-					const std::shared_ptr<T> &shared() const;
+					operator const std::shared_ptr<T> &() const;
 				private:
 					std::shared_ptr<T> _data;
 			};
