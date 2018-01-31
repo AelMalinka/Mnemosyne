@@ -63,15 +63,21 @@
 			}
 
 			template<typename T>
-			const std::shared_ptr<T> &Handle<T>::shared() const
+			const std::shared_ptr<T> &Handle<T>::shared()
 			{
 				return _data;
 			}
 
 			template<typename T>
-			Handle<T>::operator const std::shared_ptr<T> &() const
+			Handle<T>::operator const std::shared_ptr<T> &()
 			{
 				return _data;
+			}
+
+			template<typename T>
+			Handle<T>::operator bool() const
+			{
+				return _data.operator bool();
 			}
 		}
 	}

@@ -24,14 +24,15 @@
 					virtual ~Handle();
 					T *get();
 					const T *get() const;
-					const std::shared_ptr<T> &shared() const;
+					const std::shared_ptr<T> &shared();
 					Handle &operator = (const Handle<T> &);
 					Handle &operator = (Handle<T> &&);
 					T &operator *();
 					T *operator -> ();
 					const T &operator *() const;
 					const T *operator -> () const;
-					operator const std::shared_ptr<T> &() const;
+					operator const std::shared_ptr<T> &();
+					operator bool () const;
 				private:
 					std::shared_ptr<T> _data;
 			};

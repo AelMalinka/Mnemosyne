@@ -18,6 +18,11 @@ namespace {
 		Handle<T> c(move(b));
 		Handle<T> d = make_shared<T>();
 
+		EXPECT_TRUE(a);
+		EXPECT_FALSE(b);
+		EXPECT_TRUE(c);
+		EXPECT_TRUE(d);
+
 		EXPECT_NE(a.get(), nullptr);
 		EXPECT_EQ(b.get(), nullptr);
 		EXPECT_NE(c.get(), nullptr);
