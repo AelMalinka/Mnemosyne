@@ -29,6 +29,7 @@
 					virtual ~Application();
 					virtual void operator () ();
 					virtual void setMode(const PolymorphicList<ModeBase>::iterator &);
+					virtual PolymorphicList<ModeBase>::iterator current();
 					virtual PolymorphicList<ModeBase>::iterator addMode(const std::shared_ptr<ModeBase> &);
 					template<typename F>
 					auto load(const std::string &, F) const;

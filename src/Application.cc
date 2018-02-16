@@ -72,6 +72,11 @@ void Application::setMode(const PolymorphicList<ModeBase>::iterator &i)
 	onEvent(ev);
 }
 
+PolymorphicList<ModeBase>::iterator Application::current()
+{
+	return _current;
+}
+
 PolymorphicList<ModeBase>::iterator Application::addMode(const shared_ptr<ModeBase> &mode)
 {
 	_modes.push_back(mode);
