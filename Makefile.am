@@ -56,7 +56,7 @@ noinst_DATA = \
 	data/pnglogo.png \
 	data/shader.frag \
 	data/shader.vert \
-	data/sound.oga
+	data/sound.flac
 
 all-local:
 	test -d data || $(LN_S) $(top_srcdir)/data $(builddir)/data

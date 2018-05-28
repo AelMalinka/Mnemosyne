@@ -11,6 +11,6 @@ using namespace Entropy::Mnemosyne;
 
 namespace {
 	TEST(ResourceSound, Create) {
-		auto h = Resources::Sound()("data/sound.oga");
+		auto h = Resources::Sound()("data/sound.flac");
 	}
 }
