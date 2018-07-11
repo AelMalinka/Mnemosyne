@@ -25,6 +25,8 @@ resourceheaders_HEADERS = \
 	src/Resources/Exception.hh \
 	src/Resources/File.hh \
 	src/Resources/Font.hh \
+	src/Resources/Import.hh \
+	src/Resources/Import.impl.hh \
 	src/Resources/Png.hh \
 	src/Resources/Shader.hh \
 	src/Resources/Sound.hh \
